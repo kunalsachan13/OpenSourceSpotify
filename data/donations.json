@@ -1,0 +1,18 @@
+[
+  {
+    "id": "donation-1",
+    "amount": 5.0,
+    "currency": "USD",
+    "userId": "user-1",
+    "artistId": "artist-1",
+    "createdAt": "2024-05-10T12:00:00Z"
+  },
+  {
+    "id": "donation-2",
+    "amount": 10.0,
+    "currency": "USD",
+    "userId": "user-1",
+    "artistId": "artist-2",
+    "createdAt": "2024-06-15T08:30:00Z"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "artist-1",
+    "name": "Luna Nova",
+    "bio": " indie folk singer-songwriter with a dreamy sound.",
+    "songs": []
+  },
+  {
+    "id": "artist-2",
+    "name": "Neon Pulse",
+    "bio": " electronic producer blending synthwave and chillstep.",
+    "songs": []
+  },
+  {
+    "id": "artist-3",
+    "name": "Harbor Sky",
+    "bio": " ambient guitarist crafting atmospheric soundscapes.",
+    "songs": []
+  }
+]
