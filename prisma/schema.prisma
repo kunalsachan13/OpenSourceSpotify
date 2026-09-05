@@ -1,0 +1,61 @@
+prisma/schema.prisma
+generator client {
+  provider = "sqlite"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String   @id @default(uuid())
+  name          String?
+  email         String   @unique
+  password      String   // hashed password
+  createdAt     DateTime @default(now())
+  // Relations
+  playlists     Playlist[]
+  donationsSent Donation[] // donations sent by this user (as donor)
+  donationsReceived Donation[] // donations received by this user (as artist)
+}
+
+model Artist {
+  id            String   @id @default(uuid())
+  name          String
+  bio           String?
+  user          User?    // optional owner
+  songs         Song[]
+  donations     Donation[]
+}
+
+model Song {
+  id            String   @id @default(uuid())
+  title         String
+  description   String?
+  duration      String?  // e.g. "3:45"
+  url           String   // path to audio file or streaming URL
+  artist        Artist   @relation(fields: [artistId], references: [id])
+  artistId      String
+  createdAt     DateTime @default(now())
+}
+
+model Playlist {
+  id            String   @id @default(uuid())
+  name          String
+  description   String?
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  songs         Song[]
+  createdAt     DateTime @default(now())
+}
+
+model Donation {
+  id            String   @id @default(uuid())
+  amount        Float
+  currency      String   @default("USD")
+  user          User     @relation(fields: [userId], references: [id])
+  userId        String
+  artist        Artist   @relation(fields: [artistId], references: [id])
+  artistId      String
+  createdAt     DateTime @default(now())

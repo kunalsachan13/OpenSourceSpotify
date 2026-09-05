@@ -1,0 +1,16 @@
+[
+  {
+    "id": "playlist-1",
+    "name": "Chill Vibes",
+    "description": "Relaxing tracks for unwinding.",
+    "userId": "user-1",
+    "songIds": ["song-1", "song-3"]
+  },
+  {
+    "id": "playlist-2",
+    "name": "Study Focus",
+    "description": "Instrumental and low-fi beats for concentration.",
+    "userId": "user-1",
+    "songIds": ["song-5", "song-3"]
+  }
+]
